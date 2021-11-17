@@ -1,3 +1,3 @@
-## 0.0.1
+## 0.0.1-beta - [2021-11-14]
 
-* TODO: Describe initial release.
+* Initial release for Web only platform.

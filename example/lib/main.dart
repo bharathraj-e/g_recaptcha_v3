@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:g_recaptcha_v3/g_recaptcha_v3.dart';
-import 'package:g_recaptcha_v3/g_recaptcha_v3_web.dart';
 
 void main() async {
   await GRecaptchaV3.ready("6Lfl7coUAAAAAKUjryaKQDhrrklXE9yrvWNXqKTj");
@@ -24,7 +23,6 @@ class _MyAppState extends State<MyApp> {
     String token;
 
     token = await GRecaptchaV3.execute('submit') ?? '';
-    GRecaptchaV3Web.execute('submit');
     setState(() {
       _token = token;
     });

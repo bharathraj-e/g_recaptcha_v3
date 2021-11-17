@@ -1,6 +1,6 @@
-# g_recaptch_v3_example
+# g_recaptcha_v3_example
 
-Demonstrates how to use the g_recaptch_v3 plugin.
+Demonstrates how to use the g_recaptcha_v3 plugin.
 
 ## Getting Started
 
