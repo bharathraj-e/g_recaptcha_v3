@@ -1,9 +1,9 @@
 
 # g_recaptcha_v3
 
-Create Google reCAPTCHA v3 token for Flutter web.
+Create Google reCAPTCHA v3 token for Flutter web.  Google reCAPTCHA v3 plugin for Flutter. A Google reCAPTCHA is a free service that protects your website from spam and abuse.
 
-## Badges
+<br>
 
 [![Pub](https://img.shields.io/pub/v/g_recaptcha_v3.svg?style=flat-square)](https://pub.dartlang.org/packages/g_recaptcha_v3) 
 
@@ -35,7 +35,7 @@ Create Google reCAPTCHA v3 token for Flutter web.
 
 ## Development
 
-### GRecaptchaV3.ready()
+### 1. GRecaptchaV3.ready()
 
 The `ready()` method should be called before `execute()`
 
@@ -48,7 +48,7 @@ void main() async {
 }
 ````
 
-### GRecaptchaV3.execute()
+### 2. GRecaptchaV3.execute()
 
 The `ready()` method should be called before `execute()`
 
@@ -66,12 +66,12 @@ void generateToken() async {
   - method called from other than web platform.
 
 ### Web Port 80 setup 
-#### (for localhost only)
+##### (for localhost only)
 
-Other than port :80, recaptcha script will give you error.
+In case recaptcha script gives you error for port other than port :80, you can use the following code to setup the port.
 
 ```bash
-  flutter run web --web-port 80
+  flutter run -d chrome --web-port 80
 ```
 
 ## Roadmap
