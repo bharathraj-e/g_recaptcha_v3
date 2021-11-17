@@ -1,4 +1,6 @@
 @JS('grecaptcha')
+library g_recaptcha_v3_web;
+
 import 'dart:async';
 
 import 'package:flutter/foundation.dart';
@@ -77,7 +79,6 @@ class GRecaptchaV3Web {
   /// use `GRecaptchaV3` not ~GRecaptchaV3Web~
   static Future<String?> execute(String action) async {
     if (!kIsWeb) return null;
-    debugPrint(_gRecaptchaV3Key);
     if (":$_gRecaptchaV3Key" == ':undefined') {
       throw Exception('gRecaptcha V3 key not set');
     }
