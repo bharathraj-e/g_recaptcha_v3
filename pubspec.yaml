@@ -31,8 +31,8 @@ flutter:
   plugin:
     platforms:
       web:
-        pluginClass: GRecaptchV3Web
-        fileName: g_recaptch_v3_web.dart
+        pluginClass: GRecaptchaV3Web
+        fileName: g_recaptcha_v3_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
