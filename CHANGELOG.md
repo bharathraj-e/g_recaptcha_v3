@@ -1,3 +1,7 @@
+## 0.0.3 - [2021-11-20]
+
+* Added Show/hide reCaptcha badge.
+
 ## 0.0.2-beta - [2021-11-17]
 
 * Recaptcha Typo fixes.
