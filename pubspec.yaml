@@ -1,6 +1,6 @@
 name: g_recaptcha_v3
 description: Google reCAPTCHA v3 plugin for Flutter. A Google reCAPTCHA is a free service that protects your website from spam and abuse.
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/bharathraj-e/g_recaptcha_v3
 
 environment:

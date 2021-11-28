@@ -6,7 +6,7 @@ Create Google reCAPTCHA v3 token for Flutter web.  Google reCAPTCHA v3 plugin fo
 [![Pub](https://img.shields.io/pub/v/g_recaptcha_v3.svg?style=flat-square)](https://pub.dartlang.org/packages/g_recaptcha_v3)
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?style=flat-square)](https://github.com/bharathraj-e/g_recaptcha_v3/blob/dev/LICENSE)
 
-### [Web Demo - https://bharathraj-e.github.io/g_recaptcha_v3_example_build/](https://bharathraj-e.github.io/g_recaptcha_v3_example_build/)
+> [Web Demo](https://bharathraj-e.github.io/g_recaptcha_v3_example_build/)
 
 
 <img src='https://raw.githubusercontent.com/bharathraj-e/g_recaptcha_v3/dev/sample.gif' width='70%'>
@@ -38,7 +38,7 @@ Create Google reCAPTCHA v3 token for Flutter web.  Google reCAPTCHA v3 plugin fo
 
 ## Development
 
-### 1. GRecaptchaV3.ready()
+> ### 1. GRecaptchaV3.ready()
 
 The `ready()` method should be called before `execute()`
 
@@ -52,7 +52,7 @@ void main() async {
 }
 ````
 
-### 2. GRecaptchaV3.execute()
+> ### 2. GRecaptchaV3.execute()
 
 The `ready()` method should be called before `execute()`
 
@@ -70,7 +70,7 @@ void generateToken() async {
   - web setup has any errors.
   - method called from other than web platform.
 
-### Show / Hide reCaptcha badge
+> ### 3. Show / Hide reCaptcha badge
 
 change the reCaptcha badge visibility
 
@@ -81,9 +81,9 @@ change the reCaptcha badge visibility
   
 ## Warning!!!
   
-You are allowed to hide the badge as long as you include the `reCAPTCHA branding visibly in the user flow.`
+You are allowed to hide the badge as long as you `include the reCAPTCHA branding` visibly in the user flow.`
 
-Sample Image :
+Sample Image 
 
 ![alternate way](https://developers.google.com/recaptcha/images/text_badge_example.png)
 
@@ -93,7 +93,7 @@ Sample Image :
 ### Web Port 80 setup 
 ##### (for localhost only)
 
-In case recaptcha script gives you error for port other than port :80, you can use the following code to setup the port.
+If in case recaptcha script gives you error for port other than port :80, you can use the following code to setup the port.
 
 ```bash
   flutter run -d chrome --web-port 80

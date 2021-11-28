@@ -1,3 +1,7 @@
+## 0.0.4 - [2021-11-28]
+
+* Fixed dart html error during android / ios build
+
 ## 0.0.3 - [2021-11-20]
 
 * Added Show/hide reCaptcha badge.
