@@ -23,7 +23,7 @@ class GRecaptchaV3 {
       /// You are allowed to hide the badge as long as you include the `reCAPTCHA branding visibly in the user flow.`
       ///
       {bool showBadge = true}) async {
-    await recap.GRecaptchaV3PlatformInterace.ready(siteKey, showBadge);
+    await recap.GRecaptchaV3PlatformInterface.ready(siteKey, showBadge);
   }
 
   /// `ready()` method should be called before calling this method.
@@ -36,7 +36,7 @@ class GRecaptchaV3 {
   ///
   /// `Supports only web.`
   static Future<String?> execute(String action) async {
-    return await recap.GRecaptchaV3PlatformInterace.execute(action);
+    return await recap.GRecaptchaV3PlatformInterface.execute(action);
   }
 
   /// change the reCaptcha badge visibility
@@ -50,13 +50,13 @@ class GRecaptchaV3 {
   ///![alternate way](https://developers.google.com/recaptcha/images/text_badge_example.png)
   ///
   static Future<void> hideBadge() async {
-    await recap.GRecaptchaV3PlatformInterace.changeVisibility(false);
+    await recap.GRecaptchaV3PlatformInterface.changeVisibility(false);
   }
 
   /// change the reCaptcha badge visibility
   ///
   /// sets z-index of recatpcha badge to `10` to be on top of flutter elements
   static Future<void> showBadge() async {
-    await recap.GRecaptchaV3PlatformInterace.changeVisibility(true);
+    await recap.GRecaptchaV3PlatformInterface.changeVisibility(true);
   }
 }

@@ -31,7 +31,7 @@ class _Options {
 /// A web implementation of the GRecaptchaV3 plugin.
 ///
 /// use `GRecaptchaV3` not ~GRecaptchaV3PlatformInterace~
-class GRecaptchaV3PlatformInterace {
+class GRecaptchaV3PlatformInterface {
   static void registerWith(Registrar registrar) {
     final MethodChannel channel = MethodChannel(
       'g_recaptcha_v3',
@@ -39,7 +39,7 @@ class GRecaptchaV3PlatformInterace {
       registrar,
     );
 
-    final pluginInstance = GRecaptchaV3PlatformInterace();
+    final pluginInstance = GRecaptchaV3PlatformInterface();
     channel.setMethodCallHandler(pluginInstance.handleMethodCall);
   }
 
