@@ -4,8 +4,8 @@ version: 0.0.3
 homepage: https://github.com/bharathraj-e/g_recaptcha_v3
 
 environment:
-  sdk: ">=2.15.0-178.1.beta <3.0.0"
-  flutter: ">=2.5.0"
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=2.0.0"
 
 dependencies:
   flutter:
@@ -31,7 +31,7 @@ flutter:
   plugin:
     platforms:
       web:
-        pluginClass: GRecaptchaV3Web
+        pluginClass: GRecaptchaV3Platform
         fileName: g_recaptcha_v3_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:

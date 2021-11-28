@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:g_recaptcha_v3/g_recaptcha_v3.dart';
 
 void main() async {
@@ -57,7 +58,14 @@ class _MyAppState extends State<MyApp> {
                 icon: const Icon(Icons.legend_toggle),
                 label: const Text("Toggle Badge Visibilty"),
               ),
-              const SelectableText("https://pub.dev/packages/g_recaptcha_v3"),
+              TextButton.icon(
+                  label: const Icon(Icons.copy),
+                  onPressed: () {
+                    Clipboard.setData(const ClipboardData(
+                        text: "https://pub.dev/packages/g_recaptcha_v3"));
+                  },
+                  icon: const SelectableText(
+                      "https://pub.dev/packages/g_recaptcha_v3")),
             ],
           ),
         ),

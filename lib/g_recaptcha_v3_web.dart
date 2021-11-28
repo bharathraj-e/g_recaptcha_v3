@@ -30,8 +30,8 @@ class _Options {
 
 /// A web implementation of the GRecaptchaV3 plugin.
 ///
-/// use `GRecaptchaV3` not ~GRecaptchaV3Web~
-class GRecaptchaV3Web {
+/// use `GRecaptchaV3` not ~GRecaptchaV3PlatformInterace~
+class GRecaptchaV3PlatformInterace {
   static void registerWith(Registrar registrar) {
     final MethodChannel channel = MethodChannel(
       'g_recaptcha_v3',
@@ -39,7 +39,7 @@ class GRecaptchaV3Web {
       registrar,
     );
 
-    final pluginInstance = GRecaptchaV3Web();
+    final pluginInstance = GRecaptchaV3PlatformInterace();
     channel.setMethodCallHandler(pluginInstance.handleMethodCall);
   }
 
@@ -54,7 +54,7 @@ class GRecaptchaV3Web {
     }
   }
 
-  /// use `GRecaptchaV3` not ~GRecaptchaV3Web~
+  /// use `GRecaptchaV3` not ~GRecaptchaV3PlatformInterace~
   static Future<void> ready(String key, bool showBadge) async {
     if (!kIsWeb) return;
     _gRecaptchaV3Key = key;
@@ -70,7 +70,7 @@ class GRecaptchaV3Web {
     }
   }
 
-  /// use `GRecaptchaV3` not ~GRecaptchaV3Web~
+  /// use `GRecaptchaV3` not ~GRecaptchaV3PlatformInterace~
   static Future<String?> execute(String action) async {
     if (!kIsWeb) return null;
     if (":$_gRecaptchaV3Key" == ':undefined') {
