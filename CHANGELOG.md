@@ -1,3 +1,8 @@
+## 0.0.5 - [2022-06-11]
+
+* Added bool return for ready()
+* Readme updated.
+
 ## 0.0.4 - [2021-11-28]
 
 * Fixed dart html error during android / ios build

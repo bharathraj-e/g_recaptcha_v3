@@ -23,10 +23,20 @@ Create Google reCAPTCHA v3 token for Flutter web.  Google reCAPTCHA v3 plugin fo
 
 #### Step 2
 
-- Add the script inside `web/index.html` - `<body>` tag
+- Add the script inside `web/index.html` - `<head>` tag
+- Place it **before** the `main.dart.js` script (or) `flutter.js` script
 
 ```html
+<head>
+  .
+  .
+  <!-- Step 2 -->
   <script src="https://www.google.com/recaptcha/api.js?render=<your Recaptcha v3 site key>"></script>
+  <!-- Step 2 End -->
+  .
+  .
+  <script src="flutter.js" defer></script>
+</head>
 ```
 #### Step 3
 
@@ -38,7 +48,7 @@ Create Google reCAPTCHA v3 token for Flutter web.  Google reCAPTCHA v3 plugin fo
 
 ## Development
 
-> ### 1. GRecaptchaV3.ready()
+### 1. GRecaptchaV3.ready()
 
 The `ready()` method should be called before `execute()`
 
@@ -47,12 +57,15 @@ import 'package:g_recaptcha_v3/g_recaptcha_v3.dart'; //--1
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await GRecaptchaV3.ready("<your Recaptcha site key>"); //--2
+  if(kIsWeb){
+    bool ready = await GRecaptchaV3.ready("<your Recaptcha site key>"); //--2
+    print("Is Recaptcha ready? $ready");
+  }
   runApp(const MyApp());
 }
 ````
 
-> ### 2. GRecaptchaV3.execute()
+### 2. GRecaptchaV3.execute()
 
 The `ready()` method should be called before `execute()`
 
@@ -70,7 +83,7 @@ void generateToken() async {
   - web setup has any errors.
   - method called from other than web platform.
 
-> ### 3. Show / Hide reCaptcha badge
+### 3. Show / Hide reCaptcha badge
 
 change the reCaptcha badge visibility
 
@@ -87,7 +100,7 @@ Sample Image
 
 ![alternate way](https://developers.google.com/recaptcha/images/text_badge_example.png)
 
-### [Read more about hiding - reCaptcha docs](https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed)
+### [Read more about hiding in reCaptcha docs](https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed)
   
 
 ### Web Port 80 setup 
@@ -98,3 +111,8 @@ If in case recaptcha script gives you error for port other than port :80, you ca
 ```bash
   flutter run -d chrome --web-port 80
 ```
+
+### FAQ
+**Q:** How to hide reCaptcha until / before Flutter render its UI?
+
+**A:** [https://github.com/bharathraj-e/g_recaptcha_v3/issues/3](https://github.com/bharathraj-e/g_recaptcha_v3/issues/3)

@@ -3,8 +3,8 @@
 /// use `GRecaptchaV3` not ~GRecaptchaV3PlatformInterace~
 class GRecaptchaV3PlatformInterface {
   /// use `GRecaptchaV3` not ~GRecaptchaV3Platform~
-  static Future<void> ready(String key, bool showBadge) async {
-    return;
+  static Future<bool> ready(String key, bool showBadge) async {
+    return false;
   }
 
   /// use `GRecaptchaV3` not ~GRecaptchaV3PlatformInterace~

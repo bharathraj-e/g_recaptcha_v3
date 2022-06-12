@@ -1,13 +1,20 @@
 import 'dart:async';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:g_recaptcha_v3/g_recaptcha_v3.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await GRecaptchaV3.ready("6Lfl7coUAAAAAKUjryaKQDhrrklXE9yrvWNXqKTj",
-      showBadge: true);
+  if (kIsWeb) {
+    bool ready = await GRecaptchaV3.ready(
+        "6Lfl7coUAAAAAKUjryaKQDhrrklXE9yrvWNXqKTj",
+        showBadge: true); //--2
+    // ignore: avoid_print
+    print("Is Recaptcha ready? $ready");
+  }
+
   runApp(const MyApp());
 }
 
@@ -43,8 +50,8 @@ class _MyAppState extends State<MyApp> {
             children: [
               SelectableText('Token: $_token\n'),
               ElevatedButton(
-                child: const Text('Get new token'),
                 onPressed: getToken,
+                child: const Text('Get new token'),
               ),
               OutlinedButton.icon(
                 onPressed: () {

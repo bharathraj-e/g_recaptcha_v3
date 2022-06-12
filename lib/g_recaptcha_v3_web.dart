@@ -54,19 +54,21 @@ class GRecaptchaV3PlatformInterface {
     }
   }
 
-  /// use `GRecaptchaV3` not ~GRecaptchaV3PlatformInterace~
-  static Future<void> ready(String key, bool showBadge) async {
-    if (!kIsWeb) return;
-    _gRecaptchaV3Key = key;
-
+  /// This method should be called before calling `execute()` method.
+  static Future<bool> ready(String key, bool showBadge) async {
+    if (!kIsWeb) return false;
     try {
+      _gRecaptchaV3Key = key;
       await _ready(allowInterop(() {
         debugPrint('gRecaptcha V3 ready');
         changeVisibility(showBadge);
       }));
+      return true;
     } catch (e) {
+      debugPrint("Error: Looks like reCaptcha js is not loaded yet."
+          "Try to add the recaptcha js to your html <head> tag (or before flutter.js).");
       debugPrint(e.toString());
-      // !TypeError: Cannot read properties of undefined (reading 'ready')
+      return false;
     }
   }
 
@@ -74,10 +76,10 @@ class GRecaptchaV3PlatformInterface {
   static Future<String?> execute(String action) async {
     if (!kIsWeb) return null;
     if (":$_gRecaptchaV3Key" == ':undefined') {
-      throw Exception('gRecaptcha V3 key not set');
+      throw Exception('gRecaptcha V3 key not set : Try calling ready() first.');
     }
     try {
-      var result = await js_util.promiseToFuture(
+      String? result = await js_util.promiseToFuture<String>(
           await _execute(_gRecaptchaV3Key, _Options(action: action)));
       return result;
     } catch (e) {
