@@ -69,8 +69,10 @@ class GRecaptchaV3PlatformInterface {
 
     // call completer.complete() after 10 seconds if script adding fails
     Future.delayed(const Duration(seconds: 10)).then((value) {
-      _logger('reCAPTCHA script adding failed.');
-      if (!completer.isCompleted) completer.complete();
+      if (!completer.isCompleted) {
+        _logger('reCAPTCHA script adding failed.');
+        completer.complete();
+      }
     });
 
     // If script does not exist, create and append it
