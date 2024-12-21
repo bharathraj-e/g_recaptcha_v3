@@ -1,3 +1,13 @@
+## 0.0.7 - [2024-12-21]
+
+* WASM support added.
+* no need to do add script tag in html file. The package will do it automatically.
+* More Optimization.
+
+## 0.0.6 - [2024-02-09]
+
+* Js package Updated.
+
 ## 0.0.5 - [2022-06-11]
 
 * Added bool return for ready()

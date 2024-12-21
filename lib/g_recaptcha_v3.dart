@@ -2,10 +2,12 @@ library g_recaptcha_v3;
 
 import 'dart:async';
 
-import '_g_recaptcha_v3_native.dart'
-    if (dart.library.html) 'g_recaptcha_v3_web.dart' as recap;
+import 'src/_g_recaptcha_v3_native.dart'
+    if (dart.library.js_interop) 'src/g_recaptcha_v3_web.dart' as recap;
 
-/// This class is used to create a Google reCAPTCHA v3 token.
+/// Google reCAPTCHA v3 plugin for flutter web.
+///
+/// `ready()` `execute()` `hideBadge()` `showBadge()` methods are available.
 ///
 /// `Supports only web.`
 class GRecaptchaV3 {
@@ -20,6 +22,8 @@ class GRecaptchaV3 {
   /// [siteKey] - Your recaptcha v3 siteKey.
   ///
   /// This method should be called before calling `execute()` method.
+  ///
+  /// sets z-index of recatpcha badge to `10` to be on top of flutter elements
   ///
   /// ## Warning:
   ///
@@ -60,9 +64,7 @@ class GRecaptchaV3 {
     await recap.GRecaptchaV3PlatformInterface.changeVisibility(false);
   }
 
-  /// change the reCaptcha badge visibility
-  ///
-  /// sets z-index of recatpcha badge to `10` to be on top of flutter elements
+  /// set the reCaptcha badge visibility to `visible`
   static Future<void> showBadge() async {
     await recap.GRecaptchaV3PlatformInterface.changeVisibility(true);
   }

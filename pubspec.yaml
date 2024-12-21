@@ -1,23 +1,23 @@
 name: g_recaptcha_v3
 description: Google reCAPTCHA v3 plugin for Flutter Web. A Google reCAPTCHA is a free service that protects your website from spam and abuse.
-version: 0.0.5
+version: 1.0.0
 homepage: https://github.com/bharathraj-e/g_recaptcha_v3
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
-  flutter: ">=2.0.0"
+  sdk: ">=3.2.3 <4.0.0"
+  flutter: ">=3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   flutter_web_plugins:
     sdk: flutter
-  js: ^0.6.4
+  web: ^1.1.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.1
+  flutter_lints: ^3.0.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -32,11 +32,11 @@ flutter:
     platforms:
       web:
         pluginClass: GRecaptchaV3PlatformInterface
-        fileName: g_recaptcha_v3_web.dart
+        fileName: src/g_recaptcha_v3_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:
-  #   - images/a_dot_burr.jpeg
+  #   - web/g_recaptcha_v3_web_loader.js
   #   - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see

@@ -1,3 +1,5 @@
+library g_recaptcha_v3;
+
 /// A web implementation of the GRecaptchaV3 plugin.
 ///
 /// use `GRecaptchaV3` not ~GRecaptchaV3PlatformInterace~

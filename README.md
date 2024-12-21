@@ -4,7 +4,7 @@
 Create Google reCAPTCHA v3 token for Flutter web.  Google reCAPTCHA v3 plugin for Flutter. A Google reCAPTCHA is a free service that protects your website from spam and abuse.
 
 [![Pub](https://img.shields.io/pub/v/g_recaptcha_v3.svg?style=flat-square)](https://pub.dartlang.org/packages/g_recaptcha_v3)
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?style=flat-square)](https://github.com/bharathraj-e/g_recaptcha_v3/blob/dev/LICENSE)
+
 
 > [Web Demo](https://bharathraj-e.github.io/g_recaptcha_v3_example_build/)
 
@@ -21,21 +21,18 @@ Create Google reCAPTCHA v3 token for Flutter web.  Google reCAPTCHA v3 plugin fo
 - [ReCaptcha Docs](https://developers.google.com/recaptcha/docs/v3)
 - For development, add `localhost` as domain in reCaptcha console
 
-#### Step 2
+#### Step 2 [ No need / automatically added by plugin ]
 
 - Add the script inside `web/index.html` - `<head>` tag
-- Place it **before** the `main.dart.js` script (or) `flutter.js` script
-
+- Place it **before** the `main.dart.js` script (or) `flutter.js`  script (or) `flutter_bootstrap.js` script.
+ 
 ```html
 <head>
   .
   .
   <!-- Step 2 -->
   <script src="https://www.google.com/recaptcha/api.js?render=<your Recaptcha v3 site key>"></script>
-  <!-- Step 2 End -->
-  .
-  .
-  <script src="flutter.js" defer></script>
+  <!-- Step 2 End -->  
 </head>
 ```
 #### Step 3
