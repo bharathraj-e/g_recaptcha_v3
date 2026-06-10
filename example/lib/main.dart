@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -63,7 +61,7 @@ class _MyAppState extends State<MyApp> {
                   badgeVisible = !badgeVisible;
                 },
                 icon: const Icon(Icons.legend_toggle),
-                label: const Text("Toggle Badge Visibilty"),
+                label: const Text("Toggle Badge Visibility"),
               ),
               TextButton.icon(
                   label: const Icon(Icons.copy),

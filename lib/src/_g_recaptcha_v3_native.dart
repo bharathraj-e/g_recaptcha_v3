@@ -1,21 +1,35 @@
-library g_recaptcha_v3;
-
-/// A web implementation of the GRecaptchaV3 plugin.
+/// The non-web stub of the GRecaptchaV3 plugin.
 ///
-/// use `GRecaptchaV3` not ~GRecaptchaV3PlatformInterace~
+/// reCAPTCHA v3 only exists in browsers, so every member here is a no-op
+/// that lets the same app code compile and run on mobile/desktop.
+///
+/// Use the public `GRecaptchaV3` facade instead of calling this directly.
 class GRecaptchaV3PlatformInterface {
-  /// use `GRecaptchaV3` not ~GRecaptchaV3Platform~
-  static Future<bool> ready(String key, bool showBadge) async {
+  /// Always `false` on non-web platforms.
+  static bool get isReady => false;
+
+  /// Always returns `false` on non-web platforms.
+  static Future<bool> ready(
+    String key, {
+    required bool showBadge,
+    required bool useRecaptchaNet,
+    required bool useEnterprise,
+    String? badgeLanguage,
+    String? scriptNonce,
+  }) async {
     return false;
   }
 
-  /// use `GRecaptchaV3` not ~GRecaptchaV3PlatformInterace~
-  static Future<String?> execute(String action) async {
+  /// Always returns `null` on non-web platforms.
+  static Future<String?> execute(
+    String action, {
+    required bool throwOnError,
+  }) async {
     return null;
   }
 
-  /// change the reCaptcha badge visibility
-  static Future<void> changeVisibility(bool showBagde) async {
+  /// Does nothing on non-web platforms.
+  static Future<void> changeVisibility(bool showBadge) async {
     return;
   }
 }

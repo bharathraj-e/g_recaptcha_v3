@@ -1,11 +1,11 @@
 name: g_recaptcha_v3
 description: Google reCAPTCHA v3 plugin for Flutter Web. A Google reCAPTCHA is a free service that protects your website from spam and abuse.
-version: 1.0.0
+version: 1.1.0
 homepage: https://github.com/bharathraj-e/g_recaptcha_v3
 
 environment:
-  sdk: ">=3.2.3 <4.0.0"
-  flutter: ">=3.0.0"
+  sdk: ">=3.4.0 <4.0.0"
+  flutter: ">=3.22.0"
 
 dependencies:
   flutter:
@@ -17,7 +17,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.1
+  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
